@@ -11,17 +11,6 @@
         private $derrotas;
         private $empates;
         // metodos.
-        public function __construct($no,$na,$id,$al,$pe,$vi,$de,$em) {
-            $this->nome = $no;
-            $this->nacionalidade = $na;
-            $this->idade = $id;
-            $this->altura = $al;
-            $this->setPeso($pe);
-            $this->vitorias = $vi;
-            $this->derrotas = $de;
-            $this->empates = $em;
-        }
-
         public function apresentar() {
             echo "<br>Lutador: ". $this->getNome();
             echo "<br>Nacionalidade: ".$this->getNacionalidade();
@@ -34,11 +23,11 @@
         }
 
         public function status() {
-            echo $this->getNome;
-            echo " é um peso ".$this->getPeso();
-            echo " com ".$this->getVitorias." vitorias ";
-            echo " é ".$this->getDerrotas." derrotas ";
-            echo " é ".$this->getEmpates." empates.";
+            echo $this->getNome();
+            echo "<p> é um peso ".$this->getPeso();
+            echo " com ".$this->getVitorias()." vitorias ";
+            echo " é ".$this->getDerrotas()." derrotas ";
+            echo " é ".$this->getEmpates()." empates.</p>";
         }
 
         public function ganharLuta() {
@@ -54,6 +43,17 @@
         }
 
         // Metodos especiais.
+        public function __construct($no,$na,$id,$al,$pe,$vi,$de,$em) {
+            $this->nome = $no;
+            $this->nacionalidade = $na;
+            $this->idade = $id;
+            $this->altura = $al;
+            $this->setPeso($pe);
+            $this->vitorias = $vi;
+            $this->derrotas = $de;
+            $this->empates = $em;
+        }
+        
         public function getNome(){
             return $this->nome;
         }
